@@ -6,7 +6,7 @@ Git Notifier for OS X
 A Golang Git notifier for Mac OS X.
 This application will notify you when people are committing on your defined Git repositories and allows you to click on to visualize the commit.
 
-![Notification example](https://github.com/eko/git-notifier/notification-example.png?raw=true)
+![Notification example](../master/notification-example.jpg?raw=true)
 
 # Installation
 
