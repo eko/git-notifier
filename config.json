@@ -2,11 +2,11 @@
     "frequency": 15,
     "repositories": [
         {
-        	"name": "Git-Notifier",
-        	"logo": "git.png",
-        	"branch": "master",
-        	"git": "git@github.com:eko/git-notifier.git",
-        	"commit_url": "https://github.com/eko/git-notifier/commit/"
+            "name": "Git-Notifier",
+            "logo": "git.png",
+            "branch": "master",
+            "git": "git@github.com:eko/git-notifier.git",
+            "commit_url": "https://github.com/eko/git-notifier/commit/"
         }
     ]
 }

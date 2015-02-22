@@ -1,24 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"os/exec"
+    "fmt"
+    "os"
+    "os/exec"
     "io/ioutil"
     "strings"
 )
 
 // A commit structure
 type Commit struct {
-	Link       string
+    Link       string
     Sha1       string
-	Author     string
-	Message    string
+    Author     string
+    Message    string
 }
 
 // Initializes current repository
 func (r *Repository) Initialize(mainDirectory string) {
-	r.Directory = fmt.Sprintf("%s/%s", mainDirectory, r.Name)
+    r.Directory = fmt.Sprintf("%s/%s", mainDirectory, r.Name)
 }
 
 // Fetches current repository commit SHA1
@@ -76,9 +76,9 @@ func (r *Repository) GetDiff(fromSha1 string, toSha1 string) []Commit {
     results := strings.Split(string(output), "\n")
 
     for _, result := range results {
-    	if len(result) > 0 {
-	        parts := strings.Split(result, "#separator#")
-	        commits = append(commits, Commit{fmt.Sprintf("%s%s", r.CommitUrl, parts[0]), parts[0], parts[1], parts[2]})
+        if len(result) > 0 {
+            parts := strings.Split(result, "#separator#")
+            commits = append(commits, Commit{fmt.Sprintf("%s%s", r.CommitUrl, parts[0]), parts[0], parts[1], parts[2]})
         }
     }
 

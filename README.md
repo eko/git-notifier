@@ -24,11 +24,11 @@ You have to write a `JSON` configuration file with the following options:
     "frequency": 60,
     "repositories": [
         {
-        	"name": "Git-Notifier",
-        	"logo": "/path/to/my-project-logo.png",
-        	"branch": "master",
-        	"git": "git@github.com:eko/git-notifier.git",
-        	"commit_url": "https://github.com/eko/git-notifier/commit/"
+            "name": "Git-Notifier",
+            "logo": "/path/to/my-project-logo.png",
+            "branch": "master",
+            "git": "git@github.com:eko/git-notifier.git",
+            "commit_url": "https://github.com/eko/git-notifier/commit/"
         }
     ]
 }

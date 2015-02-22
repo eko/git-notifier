@@ -2,8 +2,8 @@ package main
 
 import (
     "github.com/deckarep/gosx-notifier"
-	"fmt"
-	"os"
+    "fmt"
+    "os"
     "time"
 )
 
