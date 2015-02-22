@@ -1,3 +1,7 @@
+// A Git notifier for OS X
+//
+// Author: Vincent Composieux <vincent.composieux@gmail.com>
+
 package main
 
 import (
