@@ -34,12 +34,21 @@ You have to write a `JSON` configuration file with the following options:
 }
 ```
 
+Some details about this configuration:
+
 * `frequency` corresponds to frequency your repositories will be checked for new commits (in seconds),
-* `repositories` is a list of your repositories with some information about it: name, branch and git url.
+* `repositories` is a list of your repositories with some information about it: name, branch and git url:
+    * `name` is a repository name,
+    * `logo` is an (optional) logo you can specify to appear on your notification,
+    * `branch` is the branch you want to be checked for new commits,
+    * `git` is the Git repository URL of your project,
+    * `commit_url` is the HTTP URL which will be used to view the commits detail once you will click on the notification.
 
 # Run
 
 ```bash
 $ go build
-$ go run *.go
+$ ./git-notifier
 ```
+
+I suggest you to add it to the User program at startup in order to avoid launching it manually.

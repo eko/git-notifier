@@ -1,5 +1,5 @@
 {
-    "frequency": 15,
+    "frequency": 5,
     "repositories": [
         {
             "name": "Git-Notifier",
