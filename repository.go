@@ -63,8 +63,8 @@ func (r *Repository) FetchLastSha1() string {
     fmt.Printf("Repository %s updated to SHA1: %s\n", r.Name, output)
 
     sha1 = []byte(output)
-    //e = ioutil.WriteFile(fmt.Sprintf("%s/SHA1", r.Directory), sha1, 0644)
-    //check_error(e)
+    e = ioutil.WriteFile(fmt.Sprintf("%s/SHA1", r.Directory), sha1, 0644)
+    check_error(e)
 
     return string(sha1)
 }

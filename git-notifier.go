@@ -76,7 +76,6 @@ func SendNotification(repository Repository, commit Commit) {
     notification.Subtitle     = commit.Author
     notification.Link         = commit.Link
     notification.ContentImage = "git.png"
-    notification.Sound        = gosxnotifier.Basso
 
     if len(repository.Logo) > 1 {
         notification.ContentImage = repository.Logo
