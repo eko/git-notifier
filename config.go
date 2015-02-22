@@ -4,13 +4,14 @@ import (
     "encoding/json"
     "fmt"
     "io/ioutil"
+    "time"
 )
 
 const FILENAME  = "config.json"
 
 // Configuration JSON main structure
 type Configuration struct {
-    Delay int                 `json:"delay"`
+    Frequency    time.Duration `json:"frequency"`
     Repositories []Repository `json:"repositories"`
 }
 

@@ -11,6 +11,7 @@ import (
 // A commit structure
 type Commit struct {
 	Link       string
+    Sha1       string
 	Author     string
 	Message    string
 }
@@ -77,7 +78,7 @@ func (r *Repository) GetDiff(fromSha1 string, toSha1 string) []Commit {
     for _, result := range results {
     	if len(result) > 0 {
 	        parts := strings.Split(result, "#separator#")
-	        commits = append(commits, Commit{fmt.Sprintf("%s%s", r.CommitUrl, parts[0]), parts[1], parts[2]})
+	        commits = append(commits, Commit{fmt.Sprintf("%s%s", r.CommitUrl, parts[0]), parts[0], parts[1], parts[2]})
         }
     }
 

@@ -21,7 +21,7 @@ You have to write a `JSON` configuration file with the following options:
 
 ```json
 {
-    "frequency": 120,
+    "frequency": 60,
     "repositories": [
         {
         	"name": "Git-Notifier",
