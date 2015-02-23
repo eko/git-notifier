@@ -6,7 +6,6 @@ package main
 
 import (
     "encoding/json"
-    "fmt"
     "io/ioutil"
     "time"
 )
@@ -37,8 +36,6 @@ func GetConfiguration() *Configuration {
     config := &Configuration{}
     e = json.Unmarshal(file, &config)
     check_error(e)
-
-    fmt.Print("Configuration successfully loaded\n")
 
     return config
 }

@@ -15,14 +15,15 @@ const DIRECTORY = ".repositories"
 
 // Run Git OSX Notifier
 func main() {
-    fmt.Print("Starting git-notifier...\n")
-
     config := GetConfiguration()
+
+    fmt.Printf("Git-notifier is loaded, please wait %d seconds for the first tick.\n", config.Frequency)
+
     ticker := time.NewTicker(time.Second * config.Frequency)
 
     func () {
         for _ = range ticker.C {
-            fmt.Printf("Check for repositories new commits (frequency: %d)...\n", config.Frequency)
+            fmt.Printf("Checking repositories for new commits...\n")
 
             CheckRepositories(config.Repositories)
         }
@@ -58,9 +59,8 @@ func CheckRepositories(repositories []Repository) {
 
         if (currentSha1 != lastSha1) {
             commits := repository.GetDiff(currentSha1, lastSha1)
-            
+
             for _, commit := range commits {
-                SendNotification(repository, commit)
                 SendNotification(repository, commit)
             }
         }

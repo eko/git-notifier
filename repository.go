@@ -34,7 +34,7 @@ func (r *Repository) FetchCurrentSha1() string {
     if e != nil {
         fmt.Printf("Cloning repository %s in %s\n", r.Name, r.Directory)
 
-        command   := fmt.Sprintf("git clone --depth=1 -n -b %s %s %s && cd %s && git log --pretty=oneline -1 | cut -d ' ' -f 1 | tr -d '\n'", r.Branch, r.Git, r.Directory, r.Directory)
+        command   := fmt.Sprintf("git clone --depth=1 --no-checkout --branch %s %s %s && cd %s && git log --pretty=oneline -1 | cut -d ' ' -f 1 | tr -d '\n'", r.Branch, r.Git, r.Directory, r.Directory)
         output, e := exec.Command("sh", "-c", command).Output()
         check_error(e)
 
@@ -56,7 +56,7 @@ func (r *Repository) FetchCurrentSha1() string {
 func (r *Repository) FetchLastSha1() string {
     var sha1 []byte
 
-    command   := fmt.Sprintf("cd %s && git pull -q origin %s && git log --pretty=oneline -1 | cut -d ' ' -f 1 | tr -d '\n'", r.Directory, r.Branch)
+    command   := fmt.Sprintf("cd %s && git fetch --quiet --update-head-ok origin %s:%s && git log --pretty=oneline -1 | cut -d ' ' -f 1 | tr -d '\n'", r.Directory, r.Branch, r.Branch)
     output, e := exec.Command("sh", "-c", command).Output()
     check_error(e)
 
